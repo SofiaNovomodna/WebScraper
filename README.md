@@ -16,3 +16,18 @@
 - 8679864
 - 105022684
 - 55047118
+
+### Opinion structure
+|component|name|selector|
+|---------|----|--------|
+|opinion ID|opnion_id|[data-entry-id]|
+|opinion’s author|author|span.user-post__author-name|
+|author’s recommendation|recommendation|span.user-post__author-recomendation > em|
+|score expressed in number of stars|score|span.user-post__score-count|
+|opinion’s content|content|div.user-post__text|
+|list of product advantages|pros|div.review-feature__item--positive|
+|list of product disadvantages|cons|div.review-feature__item--negative|
+|how many users think that opinion was helpful|like|span[id^="votes-yes"]|
+|how many users think that opinion was unhelpful|dislike|button.vote-no > span|
+|publishing date|publishing_date|span.user-post__published > time:nth-child(1)[datetime]|
+|purchase date|purchase_date|span.user-post__published > time:nth-child(2)[datetime]|
