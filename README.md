@@ -16,7 +16,7 @@
 - 8679864
 - 105022684
 - 55047118
-
+ 
 ### Opinion structure
 |component|name|selector|
 |---------|----|--------|

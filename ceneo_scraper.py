@@ -1,6 +1,9 @@
 import os
 import json
+import time
 import requests
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
 from bs4 import BeautifulSoup
 
 
@@ -13,6 +16,15 @@ headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36'
 }
 all_opinions0 = []
+
+url = f'https://www.ceneo.pl/{product_code}/opinie-{page}'
+
+path_to_driver = "D:\\chromedriver-win64\\chromedriver.exe"
+service = Service(path_to_driver)
+driver = webdriver.Chrome(service=service)
+driver.get(url)
+time.sleep(2)
+driver.find_element(by='xpath', value='/html/body/div[2]/div[2]/div/div/div[1]/div/div[2]/button[1]').click()
 
 while next:
     url = f'https://www.ceneo.pl/{product_code}/opinie-{page}'
